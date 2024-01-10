@@ -1,3 +1,3 @@
 # PowerDemoDash
 ## Demo of our power metering cloud dashboard
-## Please visit www.liveoakcontrols/PowerDemoDash
+## Please visit www.liveoakcontrols.com/PowerDemoDash
