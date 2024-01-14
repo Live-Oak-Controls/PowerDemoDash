@@ -1,8 +1,63 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        #timer {
+            font-size: 30px;
+            color: #ff6347;
+        }
+    </style>
+</head>
 <body>
-<h1>Live Oak Controls</h1>
-<p>Live Oak Power Demo Dash</p>
-<p>Under Construction, Please Return Soon</p>
+    <h1>Live Oak Controls</h1>
+    <p>Live Oak Power Demo Dash</p>
+    <p>Under Construction, Please Return Soon</p>
+    <p id="timer"></p>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jan 5, 2023 15:37:25").getTime();
+
+        // Update the count down every 1 second
+        var countdownfunction = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="timer"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text 
+            if (distance < 0) {
+                clearInterval(countdownfunction);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
